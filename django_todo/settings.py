@@ -138,3 +138,18 @@ X_FRAME_OPTIONS = 'DENY'
 
 # Firebase Firestore Settings
 FIREBASE_ADMIN_CERT = config('FIREBASE_ADMIN_CERT')
+
+
+'''
+http://127.0.0.1:8000/api/v1/todos/
+
+GET Single todo - http://127.0.0.1:8000/api/v1/todos/5i3KhTB8EYh1vZBqtd7v/
+
+Sample json Format
+{
+    "name": "sdd",
+    "status": "Pending",
+    "due_date": "2022-03-22T22:33:00Z"
+}
+
+'''
