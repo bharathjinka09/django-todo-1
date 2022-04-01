@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework.exceptions import NotFound
 
 from todos.firebase_client import FirebaseClient
@@ -60,3 +61,14 @@ class TodoViewSet(viewsets.ViewSet):
         self.client.update(pk, serializer.data)
 
         return Response(serializer.data)
+
+
+import requests
+
+def display_todos(request):
+
+    todos = requests.get('http://127.0.0.1:8000/api/v1/todos/')
+    print(todos.json(),'todossssssss')
+    context = {'todos':todos.json()}
+    return render(request,'index.html',context=context)
+

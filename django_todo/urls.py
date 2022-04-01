@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from todos.views import display_todos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('todos.urls', namespace='todos')),
+    path("home/",display_todos,name='display-todos')
+
 ]
